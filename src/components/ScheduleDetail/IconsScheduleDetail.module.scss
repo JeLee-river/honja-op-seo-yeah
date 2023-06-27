@@ -1,0 +1,41 @@
+.iconsContainer {
+  grid-row: 4;
+  grid-column: 1/4;
+  justify-self: self-end;
+  align-self: center;
+  font-size: 26px;
+
+  button {
+    display: flex;
+    align-items: flex-end;
+    border: 0;
+    background-color: transparent;
+    font-size: 14px;
+    // color: rgb(231, 49, 49);
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    margin-bottom: 10px;
+
+    svg {
+      font-size: 26px;
+      color: #ff5b5b;
+    }
+  }
+
+  #likesDisabled {
+    cursor: not-allowed;
+
+    #likesIcon {
+      margin: 0 5px 0 0;
+    }
+  }
+
+  #likes {
+    cursor: pointer;
+
+    #likesIcon {
+      margin: 0 5px 0 0;
+    }
+  }
+}

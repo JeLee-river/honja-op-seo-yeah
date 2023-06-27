@@ -1,0 +1,31 @@
+.reviewInputContainer {
+  grid-row: 12;
+  grid-column: 1 / 4;
+  margin: 20px 0px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .reviewsInput {
+    width: 82%;
+  }
+
+  .reviewsInputButton {
+    all: unset;
+    cursor: pointer;
+    width: 10%;
+    height: 56px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 18px;
+    color: #fff;
+    background-color: var(--main-color);
+    border-radius: 5px;
+  }
+
+  .notLoggedIn {
+    font-size: 20px;
+    margin: 20px 0 0 0;
+  }
+}

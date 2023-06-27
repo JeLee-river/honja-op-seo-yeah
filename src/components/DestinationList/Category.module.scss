@@ -1,0 +1,90 @@
+.categoryWrapper {
+  display: flex;
+  width: 100%;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.categoryContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+
+  button {
+    all: unset;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 5px;
+    min-width: 45px;
+    background-color: transparent;
+    margin-bottom: 5px;
+    color: #666;
+    font-weight: 500;
+    text-align: center;
+    margin-right: 15px;
+    padding: 5px;
+  }
+}
+
+#activeSelectedAllButton {
+  border: none;
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+#selectedAllButton {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+#activeCategory-12 {
+  background-color: #d23300;
+  color: #fff;
+}
+
+#activeCategory-14 {
+  background-color: #6d1c9d;
+  color: #fff;
+}
+
+#activeCategory-15 {
+  background-color: #007d00;
+  color: #fff;
+}
+
+#activeCategory-25 {
+  background-color: #004e4e;
+  color: #fff;
+}
+
+#activeCategory-28 {
+  background-color: #2b8a8a;
+  color: #fff;
+}
+
+#activeCategory-32 {
+  background-color: #cca800;
+  color: #fff;
+}
+
+#activeCategory-38 {
+  background-color: #773b15;
+  color: #fff;
+}
+
+#activeCategory-39 {
+  background-color: #1d6dcc;
+  color: #fff;
+}

@@ -1,38 +1,92 @@
-@font-face {
-  font-family: 'WandohopeR';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .layout {
-  padding-left: 15%;
-  padding-right: 15%;
-  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  background: #fff;
+  width: 100%;
+  height: 80px;
+  min-width: 1280px;
+  border-bottom: 1px solid #ddd;
+
+  &.active {
+    position: fixed !important;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+
+  &.float {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    border-bottom: 0;
+    background: transparent;
+
+    .layoutLeft {
+      .logo {
+        color: #fff;
+      }
+
+      nav ul li a {
+        color: #fff;
+      }
+    }
+
+    .layoutRight {
+      .auth {
+        color: #fff;
+
+        p {
+          color: #fff;
+        }
+
+        button svg {
+          color: #fff;
+        }
+
+        a span {
+          color: #fff;
+        }
+      }
+
+      .weather a {
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: normal;
+      }
+    }
+  }
+
+  .body {
+    margin: 0 auto;
+    width: 1280px;
+    height: 100%;
+    display: flex;
+  }
 
   .layoutLeft {
     display: flex;
-    width: 50%;
     align-items: center;
+    flex: 1;
 
     .logo {
       font-family: 'WandohopeR';
-      font-size: 50px;
+      font-size: 30px;
       font-weight: 700;
       color: #ef6d00;
       text-decoration: none;
     }
 
     nav {
+      padding-left: 60px;
+
       ul {
         display: flex;
         list-style: none;
         gap: 20px;
 
         a {
-          color: black;
-          font-weight: bold;
+          padding: 0 10px 0 10px;
+          color: #333;
+          font-weight: 500;
           text-decoration: none;
         }
       }
@@ -41,45 +95,92 @@
 
   .layoutRight {
     display: flex;
-    width: 50%;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end;
+    flex: 1;
 
     .weather {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+
+      img {
+        margin-right: 5px;
+        width: 30px;
+      }
+
       a {
+        display: flex;
+        align-items: center;
         text-decoration: none;
-        color: inherit;
+        color: #666;
+        font-weight: 500;
+        font-size: 14px;
       }
     }
 
-    .calendar {
-      font-size: 50px;
-      color: #ef6d00;
+    .weatherPopup {
+      position: absolute;
+      top: 60px;
+      left: 1200px;
+      width: 300px;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
     .auth {
       position: relative;
-      .userIcon {
-        font-size: 50px;
-      }
-      .dropdownMenu {
-        position: absolute;
-        top: 30px;
-        right: 0;
-        background-color: white;
-        padding: 10px;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+
+      .menu {
+        li {
+          font-size: 8px;
+        }
       }
 
-      .open {
-        background-color: lightgray;
+      button {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+
+        svg {
+          font-size: 30px;
+          color: #333;
+        }
+
+        .Avatar {
+          width: 40px;
+          height: 40px;
+          font-size: 15px;
+          font-weight: bold;
+          margin-left: 10px;
+        }
       }
 
       a {
+        padding: 0 15px 0 15px;
         text-decoration: none;
         color: inherit;
       }
     }
+
   }
 }

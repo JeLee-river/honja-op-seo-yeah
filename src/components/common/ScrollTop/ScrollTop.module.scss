@@ -1,0 +1,13 @@
+.scrollButtonBox {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  z-index: 10;
+}
+
+.scrollTopButton {
+  color: black;
+  opacity: 0.3;
+  font-size: 70px;
+  transition: transform 0.5s;
+}

@@ -1,64 +1,78 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './ScheduleList.module.scss';
-import dummy from './ScheduleListDummy';
-import { ScheduleCard } from '../ScheduleCard/ScheduleCard';
+import { useAuthState } from '../../contexts/AuthContext';
+import images from '../../constants/image';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Router from '../../constants/Router';
+import {
+  LIKES_FILTER,
+  RECENT_FILTER,
+  LIKED_FILTER
+} from '../../constants/ScheduleList';
 
-export type ScheduleType = {
-  id: string;
-  title: string;
-  description: string;
-  createdBy: string;
-  createdAt: string;
-  start_date: string;
-  end_date: string;
-  status: string;
-  destinations: string[];
-  likes: number;
+type ScheduleProps = {
+  children: React.ReactElement;
 };
 
-type ScheduleListType = ScheduleType[];
-
-export function ScheduleLists() {
-  const [ScheduleList, setScheduleList] = useState<ScheduleListType>(dummy);
-  const [scheduleSort, setScheduleSort] = useState<string>('likes');
-
-  function handleSort(e: React.MouseEvent<HTMLButtonElement>) {
-    const sortOption = (e.target as HTMLButtonElement).value;
-    console.log(sortOption);
-    setScheduleSort(sortOption);
-  }
+function ScheduleLists({ children }: ScheduleProps) {
+  const { authState } = useAuthState();
+  const isLoggedIn = authState.isLoggedIn;
+  const path = useLocation().pathname.split('/');
+  const scheduleFilter = path[path.length - 1];
+  const navigate = useNavigate();
 
   return (
-    <div className={styles.scheduleContainer}>
-      <div className={styles.scheduleListTitle}>여행 일정</div>
-      <div className={styles.scheduleFilter}>
-        <button
-          className={`${styles.sortButton} ${
-            scheduleSort === 'likes' ? styles.selected : ''
-          }`}
-          onClick={(e) => {
-            handleSort(e);
-          }}
-          value='likes'
-        >
-          인기순
-        </button>
-        <button
-          className={`${styles.sortButton} ${
-            scheduleSort === 'recent' ? styles.selected : ''
-          }`}
-          onClick={(e) => {
-            handleSort(e);
-          }}
-          value='recent'
-        >
-          최신순
-        </button>
+    <>
+      <div className={styles.imageContainer}>
+        <img
+          src={images[3]}
+          alt='일정 메인 이미지'
+          className={styles.scheduleListImage}
+        />
+        <div className={styles.scheduleListTitle}>
+          <h1>여행 일정</h1>
+          <h2>마음에 드는 일정을 찾아보세요</h2>
+        </div>
       </div>
-      <div className={styles.scheduleCardContainer}>
-        {ScheduleList.map((schedule, index) => ScheduleCard(schedule, index))}
-        <div className={styles.scheduleAdd}>일정 추가하기</div>
+      <div className={styles.scheduleContainer}>
+        <div className={styles.scheduleFilter}>
+          <button
+            className={`${styles.sortButton} ${
+              scheduleFilter === LIKES_FILTER && styles.selected
+            }`}
+            onClick={() => {
+              navigate(`${Router.SCHEDULE_LIST}/${LIKES_FILTER}`);
+            }}
+          >
+            인기순
+          </button>
+          <button
+            className={`${styles.sortButton} ${
+              scheduleFilter === RECENT_FILTER && styles.selected
+            }`}
+            onClick={() => {
+              navigate(`${Router.SCHEDULE_LIST}/${RECENT_FILTER}`);
+            }}
+          >
+            최신순
+          </button>
+          {isLoggedIn && (
+            <button
+              className={`${styles.sortButton} ${
+                scheduleFilter === LIKED_FILTER && styles.selected
+              }`}
+              onClick={() => {
+                navigate(`${Router.SCHEDULE_LIST}/${LIKED_FILTER}`);
+              }}
+            >
+              좋아요 한 일정
+            </button>
+          )}
+        </div>
+        {children}
       </div>
-    </div>
+    </>
   );
 }
+
+export default ScheduleLists;

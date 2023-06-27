@@ -2,42 +2,162 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 300px;
-  padding: 30px;
+  height: auto;
   border-radius: 10px;
   color: white;
   text-align: left;
   text-decoration: none;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-    url(https://www.agoda.com/wp-content/uploads/2020/04/Jeju-Island-hotels-things-to-do-in-Jeju-Island-South-Korea.jpg);
   background-size: cover;
-  box-shadow: 1px 1px 32px 5px rgba(0, 0, 0, 0.11);
+  box-shadow: 1px 1px 32px 5px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease-in-out;
 
-  .scheduleContent {
+  .scheduleCardContent {
+    position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
+    border-radius: 10px;
 
-    .scheduleText {
-      div + div {
-        margin-bottom: 15px;
+    .scheduleContent {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      min-height: 180px;
+      padding: 30px 30px 0 30px;
+      z-index: 2;
+
+      .scheduleText {
+        width: 100%;
+        font-size: 18px;
+
+        div {
+          width: 300px;
+          padding-bottom: 15px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+
+      .icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .like {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 13px;
+
+          .likeIcon {
+            margin-right: 5px;
+            font-size: 30px;
+
+            &:hover {
+              transform: scale(1.3);
+            }
+
+            .isLiked {
+              color: #ff0000;
+            }
+          }
+
+          .likesCount {
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
+
+        .comment {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .commentIcon {
+            margin-right: 7px;
+            font-size: 26px;
+          }
+
+          .commentsCount {
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
       }
     }
-  }
 
-  .scheduleTitle {
-    margin-bottom: 30px;
-    font-size: 24px;
-    font-weight: bold;
-  }
+    .scheduleTitle {
+      height: 40px;
+      font-size: 26px;
+      font-weight: bold;
+    }
 
-  .scheduleDestination {
-    margin-bottom: 10px;
+    .scheduleDestination {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 30px;
+      margin-bottom: 10px;
+      z-index: 2;
+
+      .destinationMap {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .mapLineContainer {
+          display: flex;
+          flex-direction: column;
+          width: 88%;
+
+          .mapLine {
+            border-bottom: 5px dotted white;
+          }
+        }
+
+        .destinationCount {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 10px;
+          border-radius: 20px;
+          color: white;
+          background-color: #ef6d00;
+        }
+      }
+
+      .destinationText {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+      }
+    }
+
+    .image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      filter: brightness(60%);
+      z-index: 1;
+    }
   }
 
   &:hover {
     cursor: pointer;
-    transform: translateY(-10px);
-    transition: 0.5s ease-in-out;
+    transform: translateY(-5px);
+    transition: 0.3s ease-in-out;
   }
 }

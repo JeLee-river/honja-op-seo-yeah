@@ -1,0 +1,28 @@
+.buttonsContainer {
+  display: flex;
+  justify-content: flex-end;
+  grid-column: 1 / 4;
+  margin: 20px 0;
+  font-size: 18px;
+
+  button {
+    all: unset;
+    cursor: pointer;
+  }
+
+  .cancelButton {
+    margin: 0 30px 0 0;
+    color: var(--sub-1-color);
+
+    a {
+      all: unset;
+    }
+  }
+
+  .confirmButton {
+    padding: 10px 15px;
+    color: #fff;
+    background-color: var(--main-color);
+    border-radius: 5px;
+  }
+}
