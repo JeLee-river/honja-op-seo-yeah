@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { DestinationsType } from '../../types/DestinationListTypes';
+// import { DestinationsType } from '../../types/DestinationListTypes';
 import styles from './Search.module.scss';
-import Category from './Category';
+// import Category from './Category';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import AlertModal from '../common/Alert/AlertModal';
 import { IconButton, InputAdornment, TextField } from '@mui/material';
@@ -12,42 +12,57 @@ const ALERT_PROPS = {
   showTitle: false
 };
 
-function Search() {
+type SearchPropsType = {
+  selectedCategory: number[];
+  getfilteredResult: (searchQuery: string, selectedCategory: number[]) => void;
+  isShowAlert: boolean;
+  setIsShowAlert: React.Dispatch<React.SetStateAction<boolean>>;
+  handleSubmitQuery: (e: React.ChangeEvent<HTMLFormElement>) => void;
+};
+
+function Search({
+  selectedCategory,
+  getfilteredResult,
+  isShowAlert,
+  setIsShowAlert,
+  handleSubmitQuery
+}: SearchPropsType) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [rankedDestinations] = useState<DestinationsType[] | []>([]);
-  const [isUserSearched, setIsUserSearched] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isShowAlert, setIsShowAlert] = useState<boolean>(false);
+  // const [rankedDestinations] = useState<DestinationsType[] | []>([]);
+  // const [isUserSearched, setIsUserSearched] = useState<boolean>(false);
+  // const [isLoading, setIsLoading] = useState<boolean>(false);
+  // const [isShowAlert, setIsShowAlert] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const searchQueryParam = useMemo(() => {
     return searchParams.get('search') ?? '';
   }, [searchParams]);
 
-  const isNullishSearchInput = (input: string) => {
-    const trimmedInput = input.replace(/ /g, '');
-    return trimmedInput === '';
-  };
+  // const isNullishSearchInput = (input: string) => {
+  //   const trimmedInput = input.replace(/ /g, '');
+  //   return trimmedInput === '';
+  // };
 
-  const handleSubmitQuery = (e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsUserSearched(() => true);
-    const submittedQuery = e.target.searchQuery.value;
-    if (isNullishSearchInput(submittedQuery)) {
-      setIsShowAlert(true);
-      navigate('/destination/list');
-      return;
-    }
-    const searchQueryString = encodeURIComponent(submittedQuery);
-    if (searchQueryString !== null) {
-      setSearchParams(`?search=${searchQueryString}`);
-    }
-    return;
-  };
+  // const handleSubmitQuery = (e: React.ChangeEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   // setIsUserSearched(() => true);
+  //   const submittedQuery = e.target.searchQuery.value;
+  //   if (isNullishSearchInput(submittedQuery)) {
+  //     setIsShowAlert(true);
+  //     navigate('/destination/list');
+  //     return;
+  //   }
+  //   const searchQueryString = encodeURIComponent(submittedQuery);
+  //   if (searchQueryString !== null) {
+  //     setSearchParams(`?search=${searchQueryString}`);
+  //     getfilteredResult(searchQueryString, selectedCategory);
+  //   }
+  //   return;
+  // };
 
-  useEffect(() => {
-    setIsUserSearched(() => true);
-  }, [setIsUserSearched, searchQueryParam]);
+  // useEffect(() => {
+  //   setIsUserSearched(() => true);
+  // }, [setIsUserSearched, searchQueryParam]);
 
   const handleOnSearchQueryConfirm = () => {
     setIsShowAlert(false);
@@ -89,13 +104,6 @@ function Search() {
             />
           </form>
         </div>
-        <Category
-          rankedDestinations={rankedDestinations}
-          isUserSearched={isUserSearched}
-          searchQueryParam={searchQueryParam}
-          isLoading={isLoading}
-          setIsLoading={setIsLoading}
-        />
       </div>
       {isShowAlert && (
         <AlertModal

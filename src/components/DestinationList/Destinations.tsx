@@ -8,23 +8,22 @@ import { createPortal } from 'react-dom';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { FaHeart, FaCommentAlt } from 'react-icons/fa';
 import { TfiClose } from 'react-icons/tfi';
+import useDestinations from '../../hooks/DestinationListHooks/useDestinations';
 
-type DestinationsPropsType = {
-  filteredDestinations: specifiedCategoryDestinationsType[] | [];
-  isTotalDataNone: boolean;
-};
+// type DestinationsPropsType = {
+//   filteredDestinations: specifiedCategoryDestinationsType[] | [];
+//   isTotalDataNone: boolean;
+// };
 
 const DESTINATION_TITLE_STATUS = {
   MAXIMUN_LENGTH: 14
 };
 
-function Destinations({
-  filteredDestinations,
-  isTotalDataNone
-}: DestinationsPropsType) {
+function Destinations() {
+  const [destinations, , totalDestinationsCount] = useDestinations();
   const [slicedDestinations, setSlicedDestinations] = useState<
     specifiedCategoryDestinationsType[] | []
-  >(filteredDestinations);
+  >(destinations);
   const [clickedDestination, setClickedDestination] =
     useState<specifiedCategoryDestinationsType | null>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -67,7 +66,7 @@ function Destinations({
   return (
     <div className={styles.destinationContentsContainer}>
       <section className={styles.destinationsContainer}>
-        {filteredDestinations?.length > 0 ? (
+        {destinations.length > 0 ? (
           <>
             {slicedDestinations.map(
               (destination: specifiedCategoryDestinationsType, index) => (
@@ -85,32 +84,32 @@ function Destinations({
                     <h2
                       className={styles.destinationTitle}
                       id={
-                        destination?.title.length >=
+                        destination.title.length >=
                         DESTINATION_TITLE_STATUS.MAXIMUN_LENGTH
                           ? styles.destinationTitleExtended
                           : styles.destinationTitle
                       }
                     >
-                      {destination?.title}
+                      {destination.title}
                     </h2>
                     <p className={styles.destinationAddress}>
-                      {destination?.addr1}
+                      {destination.addr1}
                     </p>
                     <div className={styles.destinationExtraInfo}>
                       <span className={styles.destinationCategory}>
-                        {destination?.category_name}
+                        {destination.category_name}
                       </span>
                       <div className={styles.iconContainer}>
                         <div className={styles.likeBox}>
                           <FaHeart />
                           <span className={styles.likesCounter}>
-                            {destination?.destination_likes_count}
+                            {destination.destination_likes_count}
                           </span>
                         </div>
                         <div className={styles.commentBox}>
                           <FaCommentAlt />
                           <span className={styles.commentCounter}>
-                            {destination?.comment_count}
+                            {destination.comment_count}
                           </span>
                         </div>
                       </div>
@@ -129,7 +128,7 @@ function Destinations({
             )}
           </>
         ) : (
-          isTotalDataNone && (
+          totalDestinationsCount === 0 && (
             <div className={styles.alertContainer}>
               <CiCircleAlert className={styles.alertIcon} />
               <p>검색 결과가 없습니다.</p>
@@ -138,13 +137,12 @@ function Destinations({
         )}
       </section>
 
-      {Array.isArray(filteredDestinations) &&
-        filteredDestinations?.length > 0 && (
-          <Pagination
-            filteredDestinations={filteredDestinations}
-            setSlicedDestinations={setSlicedDestinations}
-          />
-        )}
+      {Array.isArray(destinations) && destinations.length > 0 && (
+        <Pagination
+          filteredDestinations={destinations}
+          setSlicedDestinations={setSlicedDestinations}
+        />
+      )}
       {isOpen &&
         detailsDomRoot !== null &&
         createPortal(
