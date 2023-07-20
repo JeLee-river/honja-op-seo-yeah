@@ -1,21 +1,40 @@
-import { useCallback, useState } from 'react';
-import { getAllCategoryList } from '../../apis/destinationListAPI';
-import { CategoryListType } from '../../types/DestinationListTypes';
+import { useCallback, useMemo, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { isNullishSearchInput } from '../../components/DestinationList/Utils/DestinationFiltersUtils';
+import useDestinationsFetch from './useDestinationsFetch';
+import useCategory from './useCategory';
 
-function useSearch(): [
-  CategoryListType[],
-  React.Dispatch<React.SetStateAction<CategoryListType[]>>
-] {
-  const [categoryList, setCategoryList] = useState<CategoryListType[]>([]);
+type useSearchReturnType = [
+  handleSubmitQuery: (e: React.ChangeEvent<HTMLFormElement>) => void
+];
 
-  const getCategoryList = useCallback(async () => {
-    const res = await getAllCategoryList();
-    setCategoryList(res?.data);
-  }, [getAllCategoryList, setCategoryList]);
+function useSearch(): useSearchReturnType {
+  const [, setSearchParams] = useSearchParams();
+  const [, setIsShowAlert] = useState<boolean>(false);
+  const [, categoryIdList] = useCategory();
+  const [getfilteredResult] = useDestinationsFetch();
 
-  getCategoryList();
-  return [categoryList, setCategoryList];
+  const navigate = useNavigate();
+
+  const handleSubmitQuery = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // setIsUserSearched(() => true);
+    const submittedQuery = e.target.searchQuery.value;
+    if (isNullishSearchInput(submittedQuery)) {
+      setIsShowAlert(true);
+      navigate('/destination/list');
+      return;
+    }
+    const searchQueryString = encodeURIComponent(submittedQuery);
+    if (searchQueryString !== null) {
+      setSearchParams(`?search=${searchQueryString}`);
+      getfilteredResult(searchQueryString, categoryIdList);
+      console.log('검색시 실행');
+    }
+    return;
+  };
+
+  return [handleSubmitQuery];
 }
 
-export default useSearch
-
+export default useSearch;
