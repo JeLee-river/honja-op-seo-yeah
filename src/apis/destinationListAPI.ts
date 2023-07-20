@@ -29,8 +29,8 @@ export const countEachCategoryItemsByQuery = async (
 };
 
 export const getDestinationListByTitleAndCategoryId = async (
-  categoryIds: number[],
-  title: string
+  title: string,
+  categoryIds: number[]
 ) => {
   try {
     const categoryIdsQuery = categoryIds.join();
