@@ -1,6 +1,10 @@
-.categoryWrapper {
+.categoryContainer {
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  flex-wrap: wrap;
+
   padding: 10px 15px;
   box-sizing: border-box;
   border-bottom: 1px solid #eee;
@@ -10,14 +14,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.categoryContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  flex-wrap: wrap;
 
   button {
     all: unset;

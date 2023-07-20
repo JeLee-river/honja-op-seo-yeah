@@ -10,7 +10,7 @@ import {
 } from 'react-icons/md';
 
 type PaginationProps = {
-  filteredDestinations: specifiedCategoryDestinationsType[] | [];
+  filteredDestinations: specifiedCategoryDestinationsType[];
   setSlicedDestinations: React.Dispatch<
     React.SetStateAction<specifiedCategoryDestinationsType[]>
   >;

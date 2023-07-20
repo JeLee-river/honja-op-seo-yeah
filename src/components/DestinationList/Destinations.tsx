@@ -1,29 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Pagination from './Pagination';
 import Map from '../common/Map/Map';
 import styles from './Destinations.module.scss';
 import { specifiedCategoryDestinationsType } from '../../types/DestinationListTypes';
 import { CiCircleAlert } from 'react-icons/ci';
 import { createPortal } from 'react-dom';
-import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
+import {
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+  useSearchParams
+} from 'react-router-dom';
 import { FaHeart, FaCommentAlt } from 'react-icons/fa';
 import { TfiClose } from 'react-icons/tfi';
-import useDestinations from '../../hooks/DestinationListHooks/useDestinations';
-
-// type DestinationsPropsType = {
-//   filteredDestinations: specifiedCategoryDestinationsType[] | [];
-//   isTotalDataNone: boolean;
-// };
+import useDestinationsFetch from '../../hooks/DestinationListHooks/useDestinationsFetch';
+import { changeCategoryIdIntoName } from './Utils/DestinationFiltersUtils';
+import useCategory from '../../hooks/DestinationListHooks/useCategory';
 
 const DESTINATION_TITLE_STATUS = {
   MAXIMUN_LENGTH: 14
 };
 
 function Destinations() {
-  const [destinations, , totalDestinationsCount] = useDestinations();
+  const [getfilteredResult, destinations, totalDestinationsCount] =
+    useDestinationsFetch();
+  const [categoryList, categoryIdList] = useCategory();
   const [slicedDestinations, setSlicedDestinations] = useState<
-    specifiedCategoryDestinationsType[] | []
-  >(destinations);
+    specifiedCategoryDestinationsType[]
+  >([]);
   const [clickedDestination, setClickedDestination] =
     useState<specifiedCategoryDestinationsType | null>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -34,6 +39,17 @@ function Destinations() {
   const { search } = useLocation();
   const navigate = useNavigate();
   const { contentid } = useParams();
+
+  const [searchParams] = useSearchParams();
+
+  const searchQueryParams = useMemo(() => {
+    return searchParams.get('search') ?? '';
+  }, [searchParams]);
+
+  const specifiedCategoryDestinations =
+    useMemo((): specifiedCategoryDestinationsType[] => {
+      return changeCategoryIdIntoName(categoryList, destinations);
+    }, [changeCategoryIdIntoName, categoryList, destinations]);
 
   //contentid가 url에 있으면, 상세페이지가 열리도록 하기
   useEffect(() => {
@@ -139,7 +155,7 @@ function Destinations() {
 
       {Array.isArray(destinations) && destinations.length > 0 && (
         <Pagination
-          filteredDestinations={destinations}
+          filteredDestinations={specifiedCategoryDestinations}
           setSlicedDestinations={setSlicedDestinations}
         />
       )}
