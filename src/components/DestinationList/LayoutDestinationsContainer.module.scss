@@ -1,0 +1,14 @@
+.destinationsContainers {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 400px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
