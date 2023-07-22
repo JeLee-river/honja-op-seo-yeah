@@ -22,7 +22,11 @@ const DESTINATION_TITLE_STATUS = {
   MAXIMUN_LENGTH: 14
 };
 
-function Destinations() {
+type destinationsType = {
+  detailPageRef: React.RefObject<HTMLDivElement>;
+};
+
+function Destinations({ detailPageRef }: destinationsType) {
   const [getfilteredResult, destinations, totalDestinationsCount] =
     useDestinationsFetch();
   const [categoryList, categoryIdList] = useCategory();
@@ -32,9 +36,9 @@ function Destinations() {
   const [clickedDestination, setClickedDestination] =
     useState<specifiedCategoryDestinationsType | null>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [detailsDomRoot, setDetailsDomRoot] = useState<HTMLElement | null>(
-    null
-  );
+  // const [detailsDomRoot, setDetailsDomRoot] = useState<HTMLElement | null>(
+  //   null
+  // );
   const [mapDomRoot, setMapDomRoot] = useState<HTMLElement | null>(null);
   const { search } = useLocation();
   const navigate = useNavigate();
@@ -61,7 +65,7 @@ function Destinations() {
   }, [contentid, setIsOpen]);
 
   useEffect(() => {
-    setDetailsDomRoot(() => document.getElementById('main'));
+    // setDetailsDomRoot(() => document.getElementById('main'));
     setMapDomRoot(() => document.getElementById('main'));
   }, []);
 
@@ -160,7 +164,7 @@ function Destinations() {
         />
       )}
       {isOpen &&
-        detailsDomRoot !== null &&
+        detailPageRef.current !== null &&
         createPortal(
           <>
             <section className={styles.detailsContainer}>
@@ -175,7 +179,7 @@ function Destinations() {
               </button>
             </div>
           </>,
-          detailsDomRoot
+          detailPageRef.current
         )}
 
       {mapDomRoot !== null &&
