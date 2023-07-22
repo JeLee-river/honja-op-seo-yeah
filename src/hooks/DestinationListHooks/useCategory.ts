@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { CategoryListType } from '../../types/DestinationListTypes';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { extractCategoryIdFromCategoryList } from '../../components/DestinationList/Utils/DestinationFiltersUtils';
 import useDestinationsFetch from './useDestinationsFetch';
 import { getAllCategoryList } from '../../apis/destinationListAPI';
@@ -50,7 +50,6 @@ function useCategory(): useCategoryReturnType {
     setIsSelectedAll(true);
     setSelectedCategory([...categoryIdList]);
     getfilteredResult(searchQueryParams, [...selectedCategory]);
-    console.log('카테고리 전체 클릭 실행');
     return;
   }, [
     setIsLoading,
@@ -94,7 +93,6 @@ function useCategory(): useCategoryReturnType {
         const newSelectedCategory = [targetCategoryId];
         setSelectedCategory(newSelectedCategory);
         getfilteredResult(searchQueryParams, [...selectedCategory]);
-        console.log('카테고리 클릭 실행');
         return;
       }
 
@@ -102,7 +100,6 @@ function useCategory(): useCategoryReturnType {
         ? removeCategoryFromSelectedCategoryList(targetCategoryId)
         : addCategoryToSelectedCategoryList(targetCategoryId);
       getfilteredResult(searchQueryParams, [...selectedCategory]);
-      console.log('카테고리 클릭 실행');
       return;
     },
     [
