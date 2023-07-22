@@ -23,10 +23,10 @@ const DESTINATION_TITLE_STATUS = {
 };
 
 type destinationsType = {
-  detailPageRef: React.RefObject<HTMLDivElement>;
+  mainTagRef: React.RefObject<HTMLElement>;
 };
 
-function Destinations({ detailPageRef }: destinationsType) {
+function Destinations({ mainTagRef }: destinationsType) {
   const [getfilteredResult, destinations, totalDestinationsCount] =
     useDestinationsFetch();
   const [categoryList, categoryIdList] = useCategory();
@@ -39,7 +39,7 @@ function Destinations({ detailPageRef }: destinationsType) {
   // const [detailsDomRoot, setDetailsDomRoot] = useState<HTMLElement | null>(
   //   null
   // );
-  const [mapDomRoot, setMapDomRoot] = useState<HTMLElement | null>(null);
+  // const [mapDomRoot, setMapDomRoot] = useState<HTMLElement | null>(null);
   const { search } = useLocation();
   const navigate = useNavigate();
   const { contentid } = useParams();
@@ -64,10 +64,10 @@ function Destinations({ detailPageRef }: destinationsType) {
     setIsOpen(false);
   }, [contentid, setIsOpen]);
 
-  useEffect(() => {
-    // setDetailsDomRoot(() => document.getElementById('main'));
-    setMapDomRoot(() => document.getElementById('main'));
-  }, []);
+  // useEffect(() => {
+  //   // setDetailsDomRoot(() => document.getElementById('main'));
+  //   setMapDomRoot(() => document.getElementById('main'));
+  // }, []);
 
   const handleDestinationClick = (
     destination: specifiedCategoryDestinationsType
@@ -164,7 +164,7 @@ function Destinations({ detailPageRef }: destinationsType) {
         />
       )}
       {isOpen &&
-        detailPageRef.current !== null &&
+        mainTagRef.current !== null &&
         createPortal(
           <>
             <section className={styles.detailsContainer}>
@@ -179,10 +179,10 @@ function Destinations({ detailPageRef }: destinationsType) {
               </button>
             </div>
           </>,
-          detailPageRef.current
+          mainTagRef.current
         )}
 
-      {mapDomRoot !== null &&
+      {mainTagRef.current !== null &&
         createPortal(
           <Map
             markersLocations={
@@ -192,7 +192,7 @@ function Destinations({ detailPageRef }: destinationsType) {
             }
             setClickedDestination={setClickedDestination}
           />,
-          mapDomRoot
+          mainTagRef.current
         )}
     </div>
   );

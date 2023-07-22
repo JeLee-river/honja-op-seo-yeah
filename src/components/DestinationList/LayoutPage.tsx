@@ -3,11 +3,11 @@ import styles from './LayoutPage.module.scss';
 
 function LayoutPage(props: {
   children: React.ReactNode;
-  detailPageRef: React.RefObject<HTMLDivElement>;
+  mainTagRef: React.RefObject<HTMLElement>;
 }) {
   return (
     <>
-      <main className={styles.main} id='main' ref={props.detailPageRef}>
+      <main className={styles.main} id='main' ref={props.mainTagRef}>
         {props.children}
       </main>
     </>

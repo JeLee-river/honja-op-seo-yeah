@@ -6,14 +6,14 @@ import Destinations from '../components/DestinationList/Destinations';
 import Category from '../components/DestinationList/Category';
 
 function DestinationList() {
-  const detailPageRef = useRef<HTMLDivElement>(null);
+  const mainTagRef = useRef<HTMLElement>(null);
 
   return (
-    <LayoutPage detailPageRef={detailPageRef}>
+    <LayoutPage mainTagRef={mainTagRef}>
       <LayoutDestinationsContainer>
         <Search />
         <Category />
-        <Destinations detailPageRef={detailPageRef} />
+        <Destinations mainTagRef={mainTagRef} />
       </LayoutDestinationsContainer>
     </LayoutPage>
   );
