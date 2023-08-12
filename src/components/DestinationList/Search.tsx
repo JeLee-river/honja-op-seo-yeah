@@ -22,7 +22,7 @@ const ALERT_PROPS = {
 // };
 
 function Search() {
-  const [handleSubmitQuery] = useSearch();
+  const { handleSubmitQuery } = useSearch();
   const [searchParams, setSearchParams] = useSearchParams();
   // const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isShowAlert, setIsShowAlert] = useState<boolean>(false);

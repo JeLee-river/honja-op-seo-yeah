@@ -2,27 +2,27 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { CategoryListType } from '../../types/DestinationListTypes';
 import { useSearchParams } from 'react-router-dom';
 import { extractCategoryIdFromCategoryList } from '../../components/DestinationList/Utils/DestinationFiltersUtils';
-import useDestinationsFetch from './useDestinationsFetch';
+import useDestinations from './useDestinations';
 import { getAllCategoryList } from '../../apis/destinationListAPI';
 
-type useCategoryReturnType = [
-  categoryList: CategoryListType[],
-  categoryIdList: number[],
-  handleAllClick: () => void,
-  handleCategoryClick: (categoryId: number) => void,
-  isSelectedAll: boolean,
-  selectedCategory: number[],
-  isLoading: boolean,
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
-];
+type useCategoryReturnType = {
+  categoryList: CategoryListType[];
+  categoryIdList: number[];
+  handleAllClick: () => void;
+  handleCategoryClick: (categoryId: number) => void;
+  isSelectedAll: boolean;
+  selectedCategory: number[];
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 function useCategory(): useCategoryReturnType {
   const [categoryList, setCategoryList] = useState<CategoryListType[]>([]);
-  const [categoryIdList, setCategoryIdList] = useState<number[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<number[]>([]);
+  // const [categoryIdList, setCategoryIdList] = useState<number[]>(categoryIdList1);
+  // const [selectedCategory, setSelectedCategory] = useState<number[]>([]);
   const [isSelectedAll, setIsSelectedAll] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [getfilteredResult] = useDestinationsFetch();
+  // const [getfilteredResult] = useDestinations();
 
   const [searchParams] = useSearchParams();
 
@@ -33,31 +33,32 @@ function useCategory(): useCategoryReturnType {
   const getCategoryAndIdList = useCallback(async () => {
     const res = await getAllCategoryList();
     setCategoryList(res?.data);
-    setCategoryIdList(extractCategoryIdFromCategoryList([...categoryList]));
-  }, [
-    getAllCategoryList,
-    setCategoryList,
-    setCategoryIdList,
-    extractCategoryIdFromCategoryList
-  ]);
+  }, [getAllCategoryList, setCategoryList]);
 
   useEffect(() => {
     getCategoryAndIdList();
   }, [getCategoryAndIdList]);
 
+  const categoryIdList = useMemo(() => {
+    return extractCategoryIdFromCategoryList(categoryList);
+  }, [extractCategoryIdFromCategoryList, categoryList]);
+
+  const [selectedCategory, setSelectedCategory] =
+    useState<number[]>(categoryIdList);
+
   const handleAllClick = useCallback(() => {
     setIsLoading(true);
     setIsSelectedAll(true);
-    setSelectedCategory([...categoryIdList]);
-    getfilteredResult(searchQueryParams, [...selectedCategory]);
+    setSelectedCategory(categoryIdList);
+    // getfilteredResult(searchQueryParams, [...selectedCategory]);
     return;
   }, [
     setIsLoading,
     setIsSelectedAll,
-    setSelectedCategory,
-    getfilteredResult,
-    searchQueryParams,
-    selectedCategory
+    setSelectedCategory
+    // getfilteredResult,
+    // searchQueryParams,
+    // selectedCategory
   ]);
 
   // 필터 해제
@@ -92,28 +93,28 @@ function useCategory(): useCategoryReturnType {
         setIsSelectedAll(false);
         const newSelectedCategory = [targetCategoryId];
         setSelectedCategory(newSelectedCategory);
-        getfilteredResult(searchQueryParams, [...selectedCategory]);
+        // getfilteredResult(searchQueryParams, [...selectedCategory]);
         return;
       }
 
       selectedCategory.includes(targetCategoryId)
         ? removeCategoryFromSelectedCategoryList(targetCategoryId)
         : addCategoryToSelectedCategoryList(targetCategoryId);
-      getfilteredResult(searchQueryParams, [...selectedCategory]);
+      // getfilteredResult(searchQueryParams, [...selectedCategory]);
       return;
     },
     [
       setIsSelectedAll,
       setSelectedCategory,
-      getfilteredResult,
+      // getfilteredResult,
       removeCategoryFromSelectedCategoryList,
-      addCategoryToSelectedCategoryList,
-      searchQueryParams,
-      selectedCategory
+      addCategoryToSelectedCategoryList
+      // searchQueryParams,
+      // selectedCategory
     ]
   );
 
-  return [
+  return {
     categoryList,
     categoryIdList,
     handleAllClick,
@@ -122,7 +123,7 @@ function useCategory(): useCategoryReturnType {
     selectedCategory,
     isLoading,
     setIsLoading
-  ];
+  };
 }
 
 export default useCategory;

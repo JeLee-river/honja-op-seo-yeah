@@ -14,7 +14,7 @@ import {
 } from 'react-router-dom';
 import { FaHeart, FaCommentAlt } from 'react-icons/fa';
 import { TfiClose } from 'react-icons/tfi';
-import useDestinationsFetch from '../../hooks/DestinationListHooks/useDestinationsFetch';
+import useDestinations from '../../hooks/DestinationListHooks/useDestinations';
 import { changeCategoryIdIntoName } from './Utils/DestinationFiltersUtils';
 import useCategory from '../../hooks/DestinationListHooks/useCategory';
 
@@ -27,9 +27,8 @@ type destinationsType = {
 };
 
 function Destinations({ mainTagRef }: destinationsType) {
-  const [getfilteredResult, destinations, totalDestinationsCount] =
-    useDestinationsFetch();
-  const [categoryList, categoryIdList] = useCategory();
+  const { destinations, totalDestinationsCount } = useDestinations();
+  // const {categoryList, categoryIdList} = useCategory();
   const [slicedDestinations, setSlicedDestinations] = useState<
     specifiedCategoryDestinationsType[]
   >([]);
@@ -50,19 +49,23 @@ function Destinations({ mainTagRef }: destinationsType) {
     return searchParams.get('search') ?? '';
   }, [searchParams]);
 
-  const specifiedCategoryDestinations =
-    useMemo((): specifiedCategoryDestinationsType[] => {
-      return changeCategoryIdIntoName(categoryList, destinations);
-    }, [changeCategoryIdIntoName, categoryList, destinations]);
+  // const specifiedCategoryDestinations =
+  //   useMemo((): specifiedCategoryDestinationsType[] => {
+  //     return changeCategoryIdIntoName(categoryList, destinations);
+  //   }, [changeCategoryIdIntoName, categoryList, destinations]);
+
+  const destinationId = useMemo(() => {
+    return contentid;
+  }, [contentid]);
 
   //contentid가 url에 있으면, 상세페이지가 열리도록 하기
   useEffect(() => {
-    if (contentid) {
+    if (destinationId) {
       setIsOpen(true);
       return;
     }
     setIsOpen(false);
-  }, [contentid, setIsOpen]);
+  }, [destinationId, setIsOpen]);
 
   // useEffect(() => {
   //   // setDetailsDomRoot(() => document.getElementById('main'));
@@ -159,7 +162,7 @@ function Destinations({ mainTagRef }: destinationsType) {
 
       {Array.isArray(destinations) && destinations.length > 0 && (
         <Pagination
-          filteredDestinations={specifiedCategoryDestinations}
+          filteredDestinations={destinations}
           setSlicedDestinations={setSlicedDestinations}
         />
       )}

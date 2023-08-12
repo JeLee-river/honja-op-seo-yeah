@@ -7,16 +7,15 @@ const DATA_LOADING_MESSAGE = {
 };
 
 function Category() {
-  const [
+  const {
     categoryList,
-    ,
     handleAllClick,
     handleCategoryClick,
     isSelectedAll,
     selectedCategory,
     isLoading,
     setIsLoading
-  ] = useCategory();
+  } = useCategory();
 
   useEffect(() => {
     if (isLoading) {

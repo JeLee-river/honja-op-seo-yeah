@@ -1,18 +1,18 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { isNullishSearchInput } from '../../components/DestinationList/Utils/DestinationFiltersUtils';
-import useDestinationsFetch from './useDestinationsFetch';
+import useDestinations from './useDestinations';
 import useCategory from './useCategory';
 
-type useSearchReturnType = [
-  handleSubmitQuery: (e: React.ChangeEvent<HTMLFormElement>) => void
-];
+type useSearchReturnType = {
+  handleSubmitQuery: (e: React.ChangeEvent<HTMLFormElement>) => void;
+};
 
 function useSearch(): useSearchReturnType {
   const [, setSearchParams] = useSearchParams();
   const [, setIsShowAlert] = useState<boolean>(false);
-  const [, categoryIdList] = useCategory();
-  const [getfilteredResult] = useDestinationsFetch();
+  // const [, categoryIdList] = useCategory();
+  // const [getfilteredResult] = useDestinations();
 
   const navigate = useNavigate();
 
@@ -28,13 +28,13 @@ function useSearch(): useSearchReturnType {
     const searchQueryString = encodeURIComponent(submittedQuery);
     if (searchQueryString !== null) {
       setSearchParams(`?search=${searchQueryString}`);
-      getfilteredResult(searchQueryString, categoryIdList);
+      // getfilteredResult(searchQueryString, categoryIdList);
       console.log('검색시 실행');
     }
     return;
   };
 
-  return [handleSubmitQuery];
+  return { handleSubmitQuery };
 }
 
 export default useSearch;
