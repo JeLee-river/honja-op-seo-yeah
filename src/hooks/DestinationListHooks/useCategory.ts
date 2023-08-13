@@ -18,17 +18,8 @@ type useCategoryReturnType = {
 
 function useCategory(): useCategoryReturnType {
   const [categoryList, setCategoryList] = useState<CategoryListType[]>([]);
-  // const [categoryIdList, setCategoryIdList] = useState<number[]>(categoryIdList1);
-  // const [selectedCategory, setSelectedCategory] = useState<number[]>([]);
   const [isSelectedAll, setIsSelectedAll] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  // const [getfilteredResult] = useDestinations();
-
-  const [searchParams] = useSearchParams();
-
-  const searchQueryParams = useMemo(() => {
-    return searchParams.get('search') ?? '';
-  }, [searchParams]);
 
   const getCategoryAndIdList = useCallback(async () => {
     const res = await getAllCategoryList();
@@ -50,36 +41,31 @@ function useCategory(): useCategoryReturnType {
     setIsLoading(true);
     setIsSelectedAll(true);
     setSelectedCategory(categoryIdList);
-    // getfilteredResult(searchQueryParams, [...selectedCategory]);
     return;
-  }, [
-    setIsLoading,
-    setIsSelectedAll,
-    setSelectedCategory
-    // getfilteredResult,
-    // searchQueryParams,
-    // selectedCategory
-  ]);
+  }, [setIsLoading, setIsSelectedAll, setSelectedCategory]);
 
   // 필터 해제
   const removeCategoryFromSelectedCategoryList = useCallback(
     (targetCategoryId: number) => {
-      return setSelectedCategory((prevSelectedCategory) => {
+      return setSelectedCategory((prev) => {
         return (
-          prevSelectedCategory.filter(
-            (categoryId) => categoryId !== targetCategoryId
-          ) ?? []
+          prev.filter((categoryId) => categoryId !== targetCategoryId) ?? []
         );
       });
     },
     [setSelectedCategory]
   );
 
+  // useEffect(() => {
+  //   console.log('selectedCategory 카테고리', selectedCategory);
+  //   console.log('categoryIdList', categoryIdList);
+  // }, [selectedCategory, categoryIdList]);
+
   //필터 추가
   const addCategoryToSelectedCategoryList = useCallback(
     (targetCategoryId: number) => {
-      return setSelectedCategory((prevSelectedCategory) => {
-        return [...prevSelectedCategory, targetCategoryId];
+      return setSelectedCategory((prev) => {
+        return [...prev, targetCategoryId];
       });
     },
     [setSelectedCategory]
@@ -93,24 +79,20 @@ function useCategory(): useCategoryReturnType {
         setIsSelectedAll(false);
         const newSelectedCategory = [targetCategoryId];
         setSelectedCategory(newSelectedCategory);
-        // getfilteredResult(searchQueryParams, [...selectedCategory]);
         return;
       }
 
       selectedCategory.includes(targetCategoryId)
         ? removeCategoryFromSelectedCategoryList(targetCategoryId)
         : addCategoryToSelectedCategoryList(targetCategoryId);
-      // getfilteredResult(searchQueryParams, [...selectedCategory]);
       return;
     },
     [
       setIsSelectedAll,
       setSelectedCategory,
-      // getfilteredResult,
       removeCategoryFromSelectedCategoryList,
-      addCategoryToSelectedCategoryList
-      // searchQueryParams,
-      // selectedCategory
+      addCategoryToSelectedCategoryList,
+      selectedCategory
     ]
   );
 
