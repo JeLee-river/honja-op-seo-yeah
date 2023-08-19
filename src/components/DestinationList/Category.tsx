@@ -1,21 +1,24 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styles from './Category.module.scss';
 import useCategory from '../../hooks/DestinationListHooks/useCategory';
+import Destinations from './Destinations';
 
 const DATA_LOADING_MESSAGE = {
   CATEGORY_LOADING: '카테고리 정보를 로딩 중입니다.'
 };
 
-function Category() {
-  const {
-    categoryList,
-    handleAllClick,
-    handleCategoryClick,
-    isSelectedAll,
-    selectedCategory,
-    isLoading,
-    setIsLoading
-  } = useCategory();
+type categoryPropsType = {
+  mainTagRef: React.RefObject<HTMLElement>;
+};
+
+function Category({ mainTagRef }: categoryPropsType) {
+  const { categoryList, categoryIdList } = useCategory();
+
+  const [isSelectedAll, setIsSelectedAll] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const [selectedCategory, setSelectedCategory] =
+    useState<number[]>(categoryIdList);
 
   useEffect(() => {
     if (isLoading) {
@@ -28,6 +31,66 @@ function Category() {
       };
     }
   }, [isLoading, setIsLoading]);
+
+  const handleAllClick = useCallback(() => {
+    setIsLoading(true);
+    setIsSelectedAll(true);
+    setSelectedCategory(categoryIdList);
+    return;
+  }, [setIsLoading, setIsSelectedAll, setSelectedCategory, categoryIdList]);
+
+  // 필터 해제
+  const removeCategoryFromSelectedCategoryList = useCallback(
+    (targetCategoryId: number) => {
+      setSelectedCategory((prev) => {
+        return (
+          prev.filter((categoryId) => categoryId !== targetCategoryId) ?? []
+        );
+      });
+    },
+    [setSelectedCategory]
+  );
+
+  useEffect(() => {
+    console.log('카테고리 커스텀 훅의 selectedCategory', selectedCategory);
+  }, [selectedCategory]);
+
+  //필터 추가
+  const addCategoryToSelectedCategoryList = useCallback(
+    (targetCategoryId: number) => {
+      setSelectedCategory((prev) => {
+        return [...prev, targetCategoryId];
+      });
+    },
+    [setSelectedCategory]
+  );
+  //계산 대신 토글로 활성화된 카테고리 구분
+  const handleCategoryClick = useCallback(
+    (targetCategoryId: number) => {
+      setIsLoading(true);
+
+      if (isSelectedAll) {
+        setIsSelectedAll(false);
+        const newSelectedCategory = [targetCategoryId];
+        setSelectedCategory(newSelectedCategory);
+        return;
+      }
+
+      selectedCategory.includes(targetCategoryId)
+        ? removeCategoryFromSelectedCategoryList(targetCategoryId)
+        : addCategoryToSelectedCategoryList(targetCategoryId);
+      return;
+    },
+    [
+      setIsLoading,
+      setIsSelectedAll,
+      isSelectedAll,
+      selectedCategory,
+      setSelectedCategory,
+      removeCategoryFromSelectedCategoryList,
+      addCategoryToSelectedCategoryList
+    ]
+  );
 
   return (
     <>
@@ -67,6 +130,11 @@ function Category() {
           </button>
         ))}
       </div>
+      <Destinations
+        mainTagRef={mainTagRef}
+        categoryList={categoryList}
+        selectedCategory={selectedCategory}
+      />
     </>
   );
 }
