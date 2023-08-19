@@ -12,8 +12,8 @@ function DestinationList() {
     <LayoutPage mainTagRef={mainTagRef}>
       <LayoutDestinationsContainer>
         <Search />
-        <Category />
-        <Destinations mainTagRef={mainTagRef} />
+        <Category mainTagRef={mainTagRef} />
+        {/* <Destinations mainTagRef={mainTagRef} /> */}
       </LayoutDestinationsContainer>
     </LayoutPage>
   );

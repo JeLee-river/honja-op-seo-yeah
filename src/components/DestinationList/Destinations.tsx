@@ -2,7 +2,10 @@ import React, { useEffect, useMemo, useState } from 'react';
 import Pagination from './Pagination';
 import Map from '../common/Map/Map';
 import styles from './Destinations.module.scss';
-import { specifiedCategoryDestinationsType } from '../../types/DestinationListTypes';
+import {
+  CategoryListType,
+  specifiedCategoryDestinationsType
+} from '../../types/DestinationListTypes';
 import { CiCircleAlert } from 'react-icons/ci';
 import { createPortal } from 'react-dom';
 import {
@@ -16,7 +19,6 @@ import { FaHeart, FaCommentAlt } from 'react-icons/fa';
 import { TfiClose } from 'react-icons/tfi';
 import useDestinations from '../../hooks/DestinationListHooks/useDestinations';
 import { changeCategoryIdIntoName } from './Utils/DestinationFiltersUtils';
-import useCategory from '../../hooks/DestinationListHooks/useCategory';
 
 const DESTINATION_TITLE_STATUS = {
   MAXIMUN_LENGTH: 14
@@ -24,11 +26,17 @@ const DESTINATION_TITLE_STATUS = {
 
 type destinationsType = {
   mainTagRef: React.RefObject<HTMLElement>;
+  categoryList: CategoryListType[];
+  selectedCategory: number[];
 };
 
-function Destinations({ mainTagRef }: destinationsType) {
-  const { destinations, totalDestinationsCount } = useDestinations();
-  // const {categoryList, categoryIdList} = useCategory();
+function Destinations({
+  mainTagRef,
+  categoryList,
+  selectedCategory
+}: destinationsType) {
+  const { destinations, totalDestinationsCount } =
+    useDestinations(selectedCategory);
   const [slicedDestinations, setSlicedDestinations] = useState<
     specifiedCategoryDestinationsType[]
   >([]);
@@ -43,16 +51,16 @@ function Destinations({ mainTagRef }: destinationsType) {
   const navigate = useNavigate();
   const { contentid } = useParams();
 
-  const [searchParams] = useSearchParams();
+  // const [searchParams] = useSearchParams();
 
-  const searchQueryParams = useMemo(() => {
-    return searchParams.get('search') ?? '';
-  }, [searchParams]);
+  // const searchQueryParams = useMemo(() => {
+  //   return searchParams.get('search') ?? '';
+  // }, [searchParams]);
 
-  // const specifiedCategoryDestinations =
-  //   useMemo((): specifiedCategoryDestinationsType[] => {
-  //     return changeCategoryIdIntoName(categoryList, destinations);
-  //   }, [changeCategoryIdIntoName, categoryList, destinations]);
+  const specifiedCategoryDestinations =
+    useMemo((): specifiedCategoryDestinationsType[] => {
+      return changeCategoryIdIntoName(categoryList, destinations);
+    }, [changeCategoryIdIntoName, categoryList, destinations]);
 
   const destinationId = useMemo(() => {
     return contentid;
@@ -67,10 +75,13 @@ function Destinations({ mainTagRef }: destinationsType) {
     setIsOpen(false);
   }, [destinationId, setIsOpen]);
 
-  // useEffect(() => {
-  //   // setDetailsDomRoot(() => document.getElementById('main'));
-  //   setMapDomRoot(() => document.getElementById('main'));
-  // }, []);
+  useEffect(() => {
+    console.log(destinations, 'destinations');
+  }, [destinations]);
+
+  useEffect(() => {
+    console.log(specifiedCategoryDestinations, 'specifiedCategoryDestinations');
+  }, [specifiedCategoryDestinations]);
 
   const handleDestinationClick = (
     destination: specifiedCategoryDestinationsType
@@ -162,7 +173,7 @@ function Destinations({ mainTagRef }: destinationsType) {
 
       {Array.isArray(destinations) && destinations.length > 0 && (
         <Pagination
-          filteredDestinations={destinations}
+          filteredDestinations={specifiedCategoryDestinations}
           setSlicedDestinations={setSlicedDestinations}
         />
       )}
