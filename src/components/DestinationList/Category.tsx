@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styles from './Category.module.scss';
 import useCategory from '../../hooks/DestinationListHooks/useCategory';
 import Destinations from './Destinations';
+import { useSearchParams } from 'react-router-dom';
 
 const DATA_LOADING_MESSAGE = {
   CATEGORY_LOADING: '카테고리 정보를 로딩 중입니다.'
@@ -18,6 +19,11 @@ function Category({ mainTagRef }: categoryPropsType) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const [selectedCategory, setSelectedCategory] = useState<number[]>([]);
+  const [searchParams] = useSearchParams();
+
+  const searchQueryParams: string = useMemo(() => {
+    return searchParams.get('search') ?? '';
+  }, [searchParams]);
 
   useEffect(() => {
     setSelectedCategory(categoryIdList);
@@ -93,42 +99,44 @@ function Category({ mainTagRef }: categoryPropsType) {
 
   return (
     <>
-      <div className={styles.categoryContainer}>
-        <button
-          onClick={handleAllClick}
-          id={
-            isSelectedAll
-              ? styles.activeSelectedAllButton
-              : styles.selectedAllButton
-          }
-          disabled={isLoading}
-        >
-          전체
-        </button>
-
-        {categoryList.map((category, index) => (
+      {categoryList.length > 0 && (
+        <div className={styles.categoryContainer}>
           <button
-            key={index}
-            value={category.id}
-            onClick={() => handleCategoryClick(category.id)}
-            disabled={isLoading}
-            className={
-              selectedCategory.includes(category.id)
-                ? styles.activeSelectedButton
-                : styles.selectedButton
-            }
+            onClick={handleAllClick}
             id={
               isSelectedAll
-                ? styles[`Category-${category.id}`]
-                : selectedCategory.includes(category.id)
-                ? styles[`activeCategory-${category.id}`]
-                : styles[`Category-${category.id}`]
+                ? styles.activeSelectedAllButton
+                : styles.selectedAllButton
             }
+            disabled={isLoading}
           >
-            {category.name}
+            전체
           </button>
-        ))}
-      </div>
+
+          {categoryList.map((category, index) => (
+            <button
+              key={index}
+              value={category.id}
+              onClick={() => handleCategoryClick(category.id)}
+              disabled={isLoading}
+              className={
+                selectedCategory.includes(category.id)
+                  ? styles.activeSelectedButton
+                  : styles.selectedButton
+              }
+              id={
+                isSelectedAll
+                  ? styles[`Category-${category.id}`]
+                  : selectedCategory.includes(category.id)
+                  ? styles[`activeCategory-${category.id}`]
+                  : styles[`Category-${category.id}`]
+              }
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+      )}
       <Destinations
         mainTagRef={mainTagRef}
         categoryList={categoryList}
