@@ -20,14 +20,6 @@ function useCategory(): useCategoryReturnType {
     getCategoryAndIdList();
   }, [getCategoryAndIdList]);
 
-  // useEffect(() => {
-  //   const getCategoryAndIdList = async () => {
-  //     const res = await getAllCategoryList();
-  //     setCategoryList(res?.data);
-  //   };
-  //   getCategoryAndIdList();
-  // }, []);
-
   const categoryIdList = useMemo(() => {
     return extractCategoryIdFromCategoryList(categoryList);
   }, [extractCategoryIdFromCategoryList, categoryList]);

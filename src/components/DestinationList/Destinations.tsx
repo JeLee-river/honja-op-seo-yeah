@@ -8,13 +8,7 @@ import {
 } from '../../types/DestinationListTypes';
 import { CiCircleAlert } from 'react-icons/ci';
 import { createPortal } from 'react-dom';
-import {
-  Outlet,
-  useLocation,
-  useNavigate,
-  useParams,
-  useSearchParams
-} from 'react-router-dom';
+import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { FaHeart, FaCommentAlt } from 'react-icons/fa';
 import { TfiClose } from 'react-icons/tfi';
 import useDestinations from '../../hooks/DestinationListHooks/useDestinations';
@@ -43,19 +37,9 @@ function Destinations({
   const [clickedDestination, setClickedDestination] =
     useState<specifiedCategoryDestinationsType | null>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  // const [detailsDomRoot, setDetailsDomRoot] = useState<HTMLElement | null>(
-  //   null
-  // );
-  // const [mapDomRoot, setMapDomRoot] = useState<HTMLElement | null>(null);
   const { search } = useLocation();
   const navigate = useNavigate();
   const { contentid } = useParams();
-
-  // const [searchParams] = useSearchParams();
-
-  // const searchQueryParams = useMemo(() => {
-  //   return searchParams.get('search') ?? '';
-  // }, [searchParams]);
 
   const specifiedCategoryDestinations =
     useMemo((): specifiedCategoryDestinationsType[] => {
