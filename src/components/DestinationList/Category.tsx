@@ -17,8 +17,11 @@ function Category({ mainTagRef }: categoryPropsType) {
   const [isSelectedAll, setIsSelectedAll] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const [selectedCategory, setSelectedCategory] =
-    useState<number[]>(categoryIdList);
+  const [selectedCategory, setSelectedCategory] = useState<number[]>([]);
+
+  useEffect(() => {
+    setSelectedCategory(categoryIdList);
+  }, [categoryIdList]);
 
   useEffect(() => {
     if (isLoading) {
