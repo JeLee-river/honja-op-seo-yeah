@@ -21,7 +21,7 @@ function Category({ mainTagRef }: categoryPropsType) {
 
   useEffect(() => {
     setSelectedCategory(categoryIdList);
-  }, [categoryIdList]);
+  }, [setSelectedCategory, categoryIdList]);
 
   useEffect(() => {
     if (isLoading) {
