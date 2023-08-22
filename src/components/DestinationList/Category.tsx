@@ -54,10 +54,6 @@ function Category({ mainTagRef }: categoryPropsType) {
     [setSelectedCategory]
   );
 
-  useEffect(() => {
-    console.log('카테고리 커스텀 훅의 selectedCategory', selectedCategory);
-  }, [selectedCategory]);
-
   //필터 추가
   const addCategoryToSelectedCategoryList = useCallback(
     (targetCategoryId: number) => {

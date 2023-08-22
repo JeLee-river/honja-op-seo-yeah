@@ -1,8 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
-// import { DestinationsType } from '../../types/DestinationListTypes';
+import React, { useMemo, useState } from 'react';
 import styles from './Search.module.scss';
-// import Category from './Category';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import AlertModal from '../common/Alert/AlertModal';
 import { IconButton, InputAdornment, TextField } from '@mui/material';
 import { BiSearch } from 'react-icons/bi';
@@ -13,18 +11,9 @@ const ALERT_PROPS = {
   showTitle: false
 };
 
-// type SearchPropsType = {
-//   selectedCategory: number[];
-//   getfilteredResult: (searchQuery: string, selectedCategory: number[]) => void;
-//   isShowAlert: boolean;
-//   setIsShowAlert: React.Dispatch<React.SetStateAction<boolean>>;
-//   handleSubmitQuery: (e: React.ChangeEvent<HTMLFormElement>) => void;
-// };
-
 function Search() {
   const { handleSubmitQuery } = useSearch();
-  const [searchParams, setSearchParams] = useSearchParams();
-  // const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [searchParams] = useSearchParams();
   const [isShowAlert, setIsShowAlert] = useState<boolean>(false);
 
   const searchQueryParams = useMemo(() => {

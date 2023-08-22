@@ -59,14 +59,6 @@ function Destinations({
     setIsOpen(false);
   }, [destinationId, setIsOpen]);
 
-  useEffect(() => {
-    console.log(destinations, 'destinations');
-  }, [destinations]);
-
-  useEffect(() => {
-    console.log(specifiedCategoryDestinations, 'specifiedCategoryDestinations');
-  }, [specifiedCategoryDestinations]);
-
   const handleDestinationClick = (
     destination: specifiedCategoryDestinationsType
   ) => {
