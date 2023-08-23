@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter basename={process.env.REACT_APP_HOME_BASE_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <AuthProvider>
         <Header />
         <Routes>
