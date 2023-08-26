@@ -131,7 +131,7 @@
 
 ## **5. 트러블 슈팅 사례**
 
-### ㄴ
+###
 
 <br>
 
@@ -151,28 +151,34 @@
 
 - 메인 페이지
 
-![main](http://drive.google.com/uc?export=view&id=1aqgImX8dxtmfV30cVaYY1ZLX5l5kEP2C_link)
+![main](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/main.gif)
 
 <br>
 
 - 목적지 추가 Modal
 
-![add Destinations](http://drive.google.com/uc?export=view&id=1WvSrqRVR3J_8PeLlFZiTuRMq8EbWHmQE_link)
+![add Destinations](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/AddDestinations.gif)
 
 <br>
 
 - 여행 일정 관리 페이지
 
-![schedule management](http://drive.google.com/uc?export=view&id=1Y7a68jQidwUwScv4Zw5D13MZg05oJR-j_link)
+![schedule management](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ScheduleManagement.gif)
 
 <br>
 
 - 여행 일정 목록 페이지
 
-![trip schedules](http://drive.google.com/uc?export=view&id=1OOqJjGAE191jn8HuW00a_kBbEpZPn_-W_link)
+![trip schedules](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/TripSchedule.gif)
 
 <br>
 
 - 회원가입 / 로그인
 
-![trip schedules](http://drive.google.com/uc?export=view&id=1--aWO5kAXCU-2m_gmqDheTTH5tZN3aj-_link)
+![trip schedules](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/JoinAndLogin.gif)
+
+<br>
+
+- 회원 정보 수정 / 탈퇴
+
+![Modifying MyPage](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ModifyingMyPage.gif)
