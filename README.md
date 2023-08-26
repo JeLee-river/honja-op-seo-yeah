@@ -101,7 +101,7 @@
 | 프론트엔드 | React, TypeScript, SASS, Axios          |
 | 백엔드     | NestJS, TypeScript, TypeORM, PostgreSQL |
 
-![Tech Stack](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/TechStack.png)
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/TechStack.png" alt='Tech Stack' width="400" height="206"/>
 
 <br>
 
@@ -109,7 +109,7 @@
 
 [**Figma 보러가기**:arrow_forward:](https://www.figma.com/file/Nguyx3SVG4AOKmq6s26MPT/%ED%98%BC%EC%9E%90%EC%98%B5%EC%84%9C%EC%98%88?type=design&node-id=0%3A1&mode=design&t=5bxozBGXkF6s318W-1)
 
-![Figma](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/Figma.png)
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/Figma.png" alt='Figma' width="400" height="343"/>
 
 <br>
 
@@ -117,7 +117,7 @@
 
 [**ERD 보러가기**:arrow_forward:](https://www.erdcloud.com/d/evftoxqvi3z6B6og4)
 
-![ERD](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/DBSchema.png)
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/DBSchema.png" alt='ERD' width="400" height="271"/>
 
 <br>
 
@@ -125,7 +125,7 @@
 
 [**API 문서 보러가기**:arrow_forward:](https://vvhooping.com/api-docs)
 
-![API Doc](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/APIdoc.png)
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/APIdoc.png" alt='API Doc' width="400" height="239"/>
 
 <br>
 
@@ -151,34 +151,34 @@
 
 - 메인 페이지
 
-![main](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/main.gif)
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/main.gif" alt='main' width="400" height="196"/>
 
 <br>
 
 - 목적지 추가 Modal
 
-![add Destinations](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/AddDestinations.gif)
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/AddDestinations.gif" alt='add Destinations' width="400" height="196"/>
 
 <br>
 
 - 여행 일정 관리 페이지
 
-![schedule management](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ScheduleManagement.gif)
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ScheduleManagement.gif" alt='schedule management' width="400" height="196"/>
 
 <br>
 
 - 여행 일정 목록 페이지
 
-![trip schedules](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/TripSchedule.gif)
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/TripSchedule.gif" alt='trip schedules' width="400" height="196"/>
 
 <br>
 
 - 회원가입 / 로그인
 
-![Join and Login](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/JoinAndLogin.gif)
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/JoinAndLogin.gif" alt='Join and Login' width="400" height="196"/>
 
 <br>
 
 - 회원 정보 수정 / 탈퇴
 
-![Modifying User Info](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ModifyingUserInfo.gif)
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ModifyingUserInfo.gif" alt='Modifying User Info' width="400" height="196"/>
