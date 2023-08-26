@@ -151,34 +151,40 @@
 
 - 메인 페이지
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/main.gif" alt='main' width="400" height="196"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/main.gif" alt='main' width="450" height="220"/>
 
 <br>
 
 - 목적지 추가 Modal
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/AddDestinations.gif" alt='add Destinations' width="400" height="196"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/AddDestinations.gif" alt='add Destinations' width="450" height="220"/>
 
 <br>
 
 - 여행 일정 관리 페이지
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ScheduleManagement.gif" alt='schedule management' width="400" height="196"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ScheduleManagement.gif" alt='schedule management' width="450" height="220"/>
 
 <br>
 
 - 여행 일정 목록 페이지
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/TripSchedule.gif" alt='trip schedules' width="400" height="196"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/TripSchedule.gif" alt='trip schedules' width="450" height="220"/>
 
 <br>
 
 - 회원가입 / 로그인
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/JoinAndLogin.gif" alt='Join and Login' width="400" height="196"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/JoinAndLogin.gif" alt='Join and Login' width="450" height="220"/>
 
 <br>
 
 - 회원 정보 수정 / 탈퇴
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ModifyingUserInfo.gif" alt='Modifying User Info' width="400" height="196"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ModifyingUserInfo.gif" alt='Modifying User Info' width="450" height="220"/>
+
+<br>
+
+## 7. 프로젝트 실행방법
+
+### 시연 영상
