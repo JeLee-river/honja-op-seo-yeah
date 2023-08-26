@@ -13,14 +13,14 @@
 
 <br>
 
-### 서비스 대상(페르소나)
+### :bust_in_silhouette:서비스 대상(페르소나)
 
-- 김갑을 / 24세 / 학생
+- **김갑을 / 24세 / 학생**
 
   - 대학 졸업 기념으로 혼자 제주도를 여행하려 하는데요, 제주도는 처음이라 어디를 가야할 지 잘 모르겠어요.
     혼자 여행한 사람들은 어떻게 일정을 짰는지 참고하고 싶어요.
 
-- 김병정 / 32세 / 직장인
+- **김병정 / 32세 / 직장인**
   - 연차를 내고 제주도에 여행가려 합니다. 친구들과 일정을 조율하기 쉽지 않아 혼자 가게 되었어요.
     그런데 1인 여행 후기를 찾기가 어렵네요. 가고 싶은 여행지는 정했는데 혼자 가도 잘 즐길 수 있을 지 후기가 궁금해요.
 
@@ -28,7 +28,7 @@
 
 ## **2. 서비스 기능**
 
-### 주요 기능
+### :sparkles:주요 기능
 
 - 제주도 여행 일정 만들기
 
@@ -46,7 +46,7 @@
 
 <br>
 
-### 세부 기능
+### :sparkles:세부 기능
 
 - 메인 페이지 (종합)
 
@@ -78,7 +78,7 @@
 
 ## **3. 팀원 및 역할 분담**
 
-### 팀원 소개
+### :star:팀원 소개
 
 | 이름                                         | 담당 업무            | 주요 역할             |
 | -------------------------------------------- | -------------------- | --------------------- |
@@ -94,7 +94,7 @@
 
 ## **4. 프로젝트 아키텍쳐**
 
-### 기술 스택
+### :wrench:기술 스택
 
 | 부문       | 주요 기술 스택                          |
 | ---------- | --------------------------------------- |
@@ -105,25 +105,25 @@
 
 <br>
 
-### Figma
+### :art:Figma
 
-[Figma](https://www.figma.com/file/Nguyx3SVG4AOKmq6s26MPT/%ED%98%BC%EC%9E%90%EC%98%B5%EC%84%9C%EC%98%88?type=design&node-id=0%3A1&mode=design&t=5bxozBGXkF6s318W-1)
+[**Figma 보러가기**:arrow_forward:](https://www.figma.com/file/Nguyx3SVG4AOKmq6s26MPT/%ED%98%BC%EC%9E%90%EC%98%B5%EC%84%9C%EC%98%88?type=design&node-id=0%3A1&mode=design&t=5bxozBGXkF6s318W-1)
 
 ![Figma](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/Figma.png)
 
 <br>
 
-### ERD
+### :file_folder:ERD
 
-[ERD](https://www.erdcloud.com/d/evftoxqvi3z6B6og4)
+[**ERD 보러가기**:arrow_forward:](https://www.erdcloud.com/d/evftoxqvi3z6B6og4)
 
 ![ERD](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/DBSchema.png)
 
 <br>
 
-### API 문서
+### :page_with_curl:API 문서
 
-[API Doc](https://vvhooping.com/api-docs)
+[**API 문서 보러가기**:arrow_forward:](https://vvhooping.com/api-docs)
 
 ![API Doc](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/APIdoc.png)
 
@@ -137,13 +137,13 @@
 
 ## 6. 시연 영상 및 페이지 소개
 
-### 시연 영상
+### :clapper:시연 영상
 
-[시연 연상](https://youtu.be/GTEYbaXN4d0):clapper:
+[**시연 연상 보러가기**:arrow_forward:](https://youtu.be/GTEYbaXN4d0)
 
 <br>
 
-### 페이지 소개
+### :page_facing_up:페이지 소개
 
 - 여행지(목적지) 리스트 페이지
 
@@ -175,10 +175,10 @@
 
 - 회원가입 / 로그인
 
-![trip schedules](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/JoinAndLogin.gif)
+![Join and Login](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/JoinAndLogin.gif)
 
 <br>
 
 - 회원 정보 수정 / 탈퇴
 
-![Modifying MyPage](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ModifyingMyPage.gif)
+![Modifying User Info](https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ModifyingUserInfo.gif)
