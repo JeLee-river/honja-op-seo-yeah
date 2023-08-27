@@ -4,6 +4,16 @@
 
 <br>
 
+[**사이트 보러가기**](jelee-river.github.io/honja-op-seo-yeah)
+
+### **test 계정**
+
+**ID** : test@test.com  
+**Password** : elice123$
+
+<br>
+<br>
+
 ## **1. 프로젝트 소개**
 
 ### :dart:기획 목적 및 목표
@@ -24,6 +34,7 @@
   - 연차를 내고 제주도에 여행가려 합니다. 친구들과 일정을 조율하기 쉽지 않아 혼자 가게 되었어요.
     그런데 1인 여행 후기를 찾기가 어렵네요. 가고 싶은 여행지는 정했는데 혼자 가도 잘 즐길 수 있을 지 후기가 궁금해요.
 
+<br>
 <br>
 
 ## **2. 서비스 기능**
@@ -75,21 +86,23 @@
   - 로그인한 유저의 목적지 댓글 기록 확인
 
 <br>
+<br>
 
 ## **3. 팀원 및 역할 분담**
 
 ### :star:팀원 소개
 
-| 이름                                         | 담당 업무            | 주요 역할               |
-| -------------------------------------------- | -------------------- | ----------------------- |
-| [이선우](https://github.com/LL-SS)           | 팀장/프론트엔드 개발 | 일정 상세 페이지 담당   |
-| [표후동](https://github.com/whoodongpyo)     | 백엔드 개발          | 백엔드 부문 총괄        |
-| [천서연](https://github.com/icallitnewart)   | 프론트엔드 개발      | 유저 기능 담당          |
-| [김득열](https://github.com/Returndusk)      | 프론트엔드 개발      | 메인 페이지 담당        |
-| [이지원](https://github.com/LEEJW1953)       | 프론트엔드 개발      | 일정 목록 페이지 담당   |
-| [조정현](https://github.com/whThswh)         | 프론트엔드 개발      | 목적지 추가 페이지 담당 |
-| [**이정은**](https://github.com/JeLee-river) | 프론트엔드 개발      | 목적지 페이지 담당      |
+| 이름                                         | 담당 업무            | 주요 역할                                             |
+| -------------------------------------------- | -------------------- | ----------------------------------------------------- |
+| [이선우](https://github.com/LL-SS)           | 팀장/프론트엔드 개발 | 일정 상세 페이지 담당                                 |
+| [표후동](https://github.com/whoodongpyo)     | 백엔드 개발          | 백엔드 부문 총괄                                      |
+| [천서연](https://github.com/icallitnewart)   | 프론트엔드 개발      | 유저 기능 담당                                        |
+| [김득열](https://github.com/Returndusk)      | 프론트엔드 개발      | 메인 페이지 담당                                      |
+| [이지원](https://github.com/LEEJW1953)       | 프론트엔드 개발      | 일정 목록 페이지 담당                                 |
+| [조정현](https://github.com/whThswh)         | 프론트엔드 개발      | 목적지 추가 페이지 담당                               |
+| [**이정은**](https://github.com/JeLee-river) | 프론트엔드 개발      | [목적지 페이지 담당](###-:page_facing_up:페이지-소개) |
 
+<br>
 <br>
 
 ## **4. 프로젝트 아키텍쳐**
@@ -180,10 +193,11 @@
 <img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ModifyingUserInfo.gif" alt='Modifying User Info' width="450" height="220"/>
 
 <br>
+<br>
 
 ## **6. 관련 기록**
 
-### :goal_net: 트러블 슈팅
+### :goal_net:트러블 슈팅
 
 [트러블 슈팅: useEffect 무한루프](https://jelee-river.github.io/posts/7.17-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%EC%9D%BC%EC%A7%80/)
 
