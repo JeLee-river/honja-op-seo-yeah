@@ -188,19 +188,19 @@
 
 - 목적지 추가 Modal
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/AddDestinations.gif" alt='add Destinations' width="450" height="220"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/AddDestinations.gif" alt='add Destinations' width="560" height="274"/>
 
 <br>
 
 - 여행 일정 관리 페이지
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ScheduleManagement.gif" alt='schedule management' width="450" height="220"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ScheduleManagement.gif" alt='schedule management' width="560" height="274"/>
 
 <br>
 
 - 여행 일정 목록 페이지
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/TripSchedule.gif" alt='trip schedules' width="450" height="220"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/TripSchedule.gif" alt='trip schedules' width="560" height="274"/>
 
 <br>
 
