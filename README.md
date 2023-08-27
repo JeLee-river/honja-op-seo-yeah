@@ -176,7 +176,7 @@
 
 - 목적지(여행지) 페이지
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/destinationsList.gif" alt='destinationsList' width="450" height="220"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/destinationsList.gif" alt='destinationsList' width="560" height="274"/>
 
 <br>
 
