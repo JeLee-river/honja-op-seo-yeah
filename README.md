@@ -4,7 +4,7 @@
 
 <br>
 
-[**사이트 보러가기**](jelee-river.github.io/honja-op-seo-yeah)
+[**혼자옵서예 방문하기**:sailboat:](jelee-river.github.io/honja-op-seo-yeah)
 
 ### **test 계정**
 
@@ -15,6 +15,28 @@
 <br>
 
 ## **1. 프로젝트 소개**
+
+### :bulb:기획 배경
+
+**1. 1인 여행 수요 증가**
+
+- 문화체육관광부의 '22년 국민여행조사 통계에 따르면, 최근 3년간 1인 여행(일명, 혼행)의 수요가 매년 약 1% p 지속 증가함.
+
+- 관광부문 전체 소비액 중 1인세대의 소비 비중은 '21년 14.58%로 전년 대비 5.5% p 증가함.
+
+<br>
+
+**2. 1인 여행 정보를 얻을 수 있는 전문 플랫폼 부재**
+
+- 혼행 정보 취득 조사에 따르면,  2030세대는 유튜브, 인스타그램을, 4050세대는 기사, 잡지, 블로그 등을 이용하고 있음.
+
+- 정보 공유는 메모장, 수첩 등에 기록하거나 SNS을 이용해 사진 및 스토리 형태로 이루어지고 있음.
+
+<br>
+
+[출처-한국관광 데이터랩](https://datalab.visitkorea.or.kr/site/portal/ex/bbs/View.do?cbIdx=1129&bcIdx=300133&pageIndex=1&tgtTypeCd=SUB_CONT&searchKey=%ED%98%BC%ED%96%89&searchKey2=&tabFlag=N&subFlag=N&cateCont=tlt03)
+
+<br>
 
 ### :dart:기획 목적 및 목표
 
