@@ -182,7 +182,7 @@
 
 - 메인 페이지
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/main.gif" alt='main' width="450" height="220"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/main.gif" alt='main' width="560" height="274"/>
 
 <br>
 
