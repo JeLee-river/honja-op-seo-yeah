@@ -80,15 +80,15 @@
 
 ### :star:팀원 소개
 
-| 이름                                         | 담당 업무            | 주요 역할             |
-| -------------------------------------------- | -------------------- | --------------------- |
-| [이선우](https://github.com/LL-SS)           | 팀장/프론트엔드 개발 | 일정 상세 페이지 담당 |
-| [표후동](https://github.com/whoodongpyo)     | 백엔드 개발          | 백엔드 부문 총괄      |
-| [천서연](https://github.com/icallitnewart)   | 프론트엔드 개발      | 유저 기능 담당        |
-| [김득열](https://github.com/Returndusk)      | 프론트엔드 개발      | 메인 페이지 담당      |
-| [이지원](https://github.com/LEEJW1953)       | 프론트엔드 개발      | 일정 목록 페이지 담당 |
-| [조정현](https://github.com/whThswh)         | 프론트엔드 개발      | 일정 추가 페이지 담당 |
-| [**이정은**](https://github.com/JeLee-river) | 프론트엔드 개발      | 목적지 페이지 담당    |
+| 이름                                         | 담당 업무            | 주요 역할               |
+| -------------------------------------------- | -------------------- | ----------------------- |
+| [이선우](https://github.com/LL-SS)           | 팀장/프론트엔드 개발 | 일정 상세 페이지 담당   |
+| [표후동](https://github.com/whoodongpyo)     | 백엔드 개발          | 백엔드 부문 총괄        |
+| [천서연](https://github.com/icallitnewart)   | 프론트엔드 개발      | 유저 기능 담당          |
+| [김득열](https://github.com/Returndusk)      | 프론트엔드 개발      | 메인 페이지 담당        |
+| [이지원](https://github.com/LEEJW1953)       | 프론트엔드 개발      | 일정 목록 페이지 담당   |
+| [조정현](https://github.com/whThswh)         | 프론트엔드 개발      | 목적지 추가 페이지 담당 |
+| [**이정은**](https://github.com/JeLee-river) | 프론트엔드 개발      | 목적지 페이지 담당      |
 
 <br>
 
@@ -109,7 +109,7 @@
 
 [**Figma 보러가기**:arrow_forward:](https://www.figma.com/file/Nguyx3SVG4AOKmq6s26MPT/%ED%98%BC%EC%9E%90%EC%98%B5%EC%84%9C%EC%98%88?type=design&node-id=0%3A1&mode=design&t=5bxozBGXkF6s318W-1)
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/Figma.png" alt='Figma' width="400" height="343"/>
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/Figma.jpg" alt='Figma' width="400" height="343"/>
 
 <br>
 
@@ -129,13 +129,7 @@
 
 <br>
 
-## **5. 트러블 슈팅 사례**
-
-###
-
-<br>
-
-## 6. 시연 영상 및 페이지 소개
+## **5. 시연 영상 및 페이지 소개**
 
 ### :clapper:시연 영상
 
@@ -145,7 +139,9 @@
 
 ### :page_facing_up:페이지 소개
 
-- 여행지(목적지) 리스트 페이지
+- 목적지(여행지) 페이지
+
+<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/destinationsList.gif" alt='destinationsList' width="450" height="220"/>
 
 <br>
 
@@ -185,6 +181,14 @@
 
 <br>
 
-## 7. 프로젝트 실행방법
+## **6. 관련 기록**
 
-### 시연 영상
+### :goal_net: 트러블 슈팅
+
+[트러블 슈팅: useEffect 무한루프](https://jelee-river.github.io/posts/7.17-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%EC%9D%BC%EC%A7%80/)
+
+[트러블 슈팅: 카카오맵이 중복 렌더링되는 문제 해결하기](https://jelee-river.github.io/posts/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%851/)
+
+[트러블 슈팅: 데이터가 렌더링되지 않는 문제](https://jelee-river.github.io/posts/8.10-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%EC%9D%BC%EC%A7%80/)
+
+<br>
