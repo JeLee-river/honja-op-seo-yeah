@@ -176,43 +176,43 @@
 
 - 목적지(여행지) 페이지
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/destinationsList.gif" alt='destinationsList' width="450" height="220"/>
+<img src="https://res.cloudinary.com/dr26wooar/image/upload/v1693191506/honja-op-seo-yeah/destinationsList.gif" alt='destinationsList' width="450" height="220"/>
 
 <br>
 
 - 메인 페이지
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/main.gif" alt='main' width="450" height="220"/>
+<img src="https://res.cloudinary.com/dr26wooar/image/upload/v1693191507/honja-op-seo-yeah/main.gif" alt='main' width="450" height="220"/>
 
 <br>
 
 - 목적지 추가 Modal
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/AddDestinations.gif" alt='add Destinations' width="450" height="220"/>
+<img src="https://res.cloudinary.com/dr26wooar/image/upload/v1693191508/honja-op-seo-yeah/AddDestinations.gif" alt='add Destinations' width="450" height="220"/>
 
 <br>
 
 - 여행 일정 관리 페이지
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ScheduleManagement.gif" alt='schedule management' width="450" height="220"/>
+<img src="https://res.cloudinary.com/dr26wooar/image/upload/v1693191507/honja-op-seo-yeah/ScheduleManagement.gif" alt='schedule management' width="450" height="220"/>
 
 <br>
 
 - 여행 일정 목록 페이지
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/TripSchedule.gif" alt='trip schedules' width="450" height="220"/>
+<img src="https://res.cloudinary.com/dr26wooar/image/upload/v1693191507/honja-op-seo-yeah/TripSchedule.gif" alt='trip schedules' width="450" height="220"/>
 
 <br>
 
 - 회원가입 / 로그인
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/JoinAndLogin.gif" alt='Join and Login' width="450" height="220"/>
+<img src="https://res.cloudinary.com/dr26wooar/image/upload/v1693191506/honja-op-seo-yeah/JoinAndLogin.gif" alt='Join and Login' width="450" height="220"/>
 
 <br>
 
 - 회원 정보 수정 / 탈퇴
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/ModifyingUserInfo.gif" alt='Modifying User Info' width="450" height="220"/>
+<img src="https://res.cloudinary.com/dr26wooar/image/upload/v1693191507/honja-op-seo-yeah/ModifyingUserInfo.gif" alt='Modifying User Info' width="450" height="220"/>
 
 <br>
 <br>
