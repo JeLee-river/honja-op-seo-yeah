@@ -221,10 +221,12 @@
 
 ### :goal_net:트러블 슈팅
 
-[트러블 슈팅: useEffect 무한루프](https://jelee-river.github.io/posts/7.17-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%EC%9D%BC%EC%A7%80/)
-
 [트러블 슈팅: 카카오맵이 중복 렌더링되는 문제 해결하기](https://jelee-river.github.io/posts/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%851/)
 
-[트러블 슈팅: 데이터가 렌더링되지 않는 문제](https://jelee-river.github.io/posts/8.10-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%EC%9D%BC%EC%A7%80/)
+[트러블 슈팅: 디바운싱(debouncing)으로 지도의 마커가 사라지지 않는 버그 해결하기](https://jelee-river.github.io/posts/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85_%EB%A7%88%EC%BB%A4-%EC%A0%9C%EA%B1%B0-%EB%B2%84%EA%B7%B8/)
+
+[트러블 슈팅: useEffect 무한루프 해결하기](https://jelee-river.github.io/posts/7.17-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%EC%9D%BC%EC%A7%80/)
+
+[트러블 슈팅: 데이터가 렌더링되지 않는 문제 해결하기](https://jelee-river.github.io/posts/8.10-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%EC%9D%BC%EC%A7%80/)
 
 <br>
