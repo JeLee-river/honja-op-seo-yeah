@@ -4,7 +4,7 @@
 
 <br>
 
-[**혼자옵서예 방문하기**:sailboat:](https://jelee-river.github.io/honja-op-seo-yeah/)
+[**혼자옵서예 방문하기**:sailboat:](https://honja-op-seo-yeah.vercel.app)
 
 ### **test 계정**
 
