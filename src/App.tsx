@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <AuthProvider>
         <Header />
         <Routes>
