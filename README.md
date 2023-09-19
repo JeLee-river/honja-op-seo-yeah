@@ -3,15 +3,6 @@
 > 제주도를 혼자 여행하는 사람들을 위한, 일정 계획 플랫폼
 
 <br>
-
-[**혼자옵서예 방문하기**:sailboat:](https://honja-op-seo-yeah.vercel.app)
-
-### **test 계정**
-
-**ID** : test@test.com  
-**Password** : elice123$
-
-<br>
 <br>
 
 ## **1. 프로젝트 소개**
@@ -157,8 +148,6 @@
 <br>
 
 ### :page_with_curl:API 문서
-
-[**API 문서 보러가기**:arrow_forward:](https://vvhooping.com/api-docs)
 
 <img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/APIdoc.png" alt='API Doc' width="400" height="239"/>
 
