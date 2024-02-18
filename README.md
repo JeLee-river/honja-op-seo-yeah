@@ -127,7 +127,7 @@
 | 프론트엔드 | React, TypeScript, SASS, Axios          |
 | 백엔드     | NestJS, TypeScript, TypeORM, PostgreSQL |
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/TechStack.png" alt='Tech Stack' width="400" height="206"/>
+<img src="https://res.cloudinary.com/dr26wooar/image/upload/v1708220570/honja-op-seo-yeah/techStack.png" alt='Tech Stack' width="400" height="206"/>
 
 <br>
 
@@ -135,7 +135,7 @@
 
 [**Figma 보러가기**:arrow_forward:](https://www.figma.com/file/Nguyx3SVG4AOKmq6s26MPT/%ED%98%BC%EC%9E%90%EC%98%B5%EC%84%9C%EC%98%88?type=design&node-id=0%3A1&mode=design&t=5bxozBGXkF6s318W-1)
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/Figma.jpg" alt='Figma' width="400" height="343"/>
+<img src="https://res.cloudinary.com/dr26wooar/image/upload/v1708220570/honja-op-seo-yeah/figma.jpg" alt='Figma' width="400" height="343"/>
 
 <br>
 
@@ -143,13 +143,13 @@
 
 [**ERD 보러가기**:arrow_forward:](https://www.erdcloud.com/d/evftoxqvi3z6B6og4)
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/DBSchema.png" alt='ERD' width="400" height="271"/>
+<img src="https://res.cloudinary.com/dr26wooar/image/upload/v1708220569/honja-op-seo-yeah/dbSchema.png" alt='ERD' width="400" height="271"/>
 
 <br>
 
 ### :page_with_curl:API 문서
 
-<img src="https://honja-op-seo-yeah.s3.ap-northeast-2.amazonaws.com/APIdoc.png" alt='API Doc' width="400" height="239"/>
+<img src="https://res.cloudinary.com/dr26wooar/image/upload/v1708220569/honja-op-seo-yeah/APIdoc.png" alt='API Doc' width="400" height="239"/>
 
 <br>
 
