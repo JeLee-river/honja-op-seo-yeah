@@ -105,15 +105,15 @@
 
 ### :star:팀원 소개
 
-| 이름                                         | 담당 업무            | 주요 역할                                             |
-| -------------------------------------------- | -------------------- | ----------------------------------------------------- |
-| [이선우](https://github.com/LL-SS)           | 팀장/프론트엔드 개발 | 일정 상세 페이지 담당                                 |
-| [표후동](https://github.com/whoodongpyo)     | 백엔드 개발          | 백엔드 부문 총괄                                      |
-| [천서연](https://github.com/icallitnewart)   | 프론트엔드 개발      | 유저 기능 담당                                        |
-| [김득열](https://github.com/Returndusk)      | 프론트엔드 개발      | 메인 페이지 담당                                      |
-| [이지원](https://github.com/LEEJW1953)       | 프론트엔드 개발      | 일정 목록 페이지 담당                                 |
-| [조정현](https://github.com/whThswh)         | 프론트엔드 개발      | 목적지 추가 페이지 담당                               |
-| [**이정은**](https://github.com/JeLee-river) | 프론트엔드 개발      | [목적지 페이지 담당](###-:page_facing_up:페이지-소개) |
+| 이름                                         | 담당 업무            | 주요 역할                                        |
+| -------------------------------------------- | -------------------- | ------------------------------------------------ |
+| [이선우](https://github.com/LL-SS)           | 팀장/프론트엔드 개발 | 일정 상세 페이지 담당                            |
+| [표후동](https://github.com/whoodongpyo)     | 백엔드 개발          | 백엔드 부문 총괄                                 |
+| [천서연](https://github.com/icallitnewart)   | 프론트엔드 개발      | 유저 기능 담당                                   |
+| [김득열](https://github.com/Returndusk)      | 프론트엔드 개발      | 메인 페이지 담당                                 |
+| [이지원](https://github.com/LEEJW1953)       | 프론트엔드 개발      | 일정 목록 페이지 담당                            |
+| [조정현](https://github.com/whThswh)         | 프론트엔드 개발      | 목적지 추가 페이지 담당                          |
+| [**이정은**](https://github.com/JeLee-river) | 프론트엔드 개발      | [목적지 페이지](###-:page_facing_up:페이지-소개) |
 
 <br>
 <br>
@@ -210,7 +210,7 @@
 
 ### :goal_net:트러블 슈팅
 
-[트러블 슈팅: 카카오맵이 중복 렌더링되는 문제 해결하기](https://jelee-river.github.io/posts/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%851/)
+[트러블 슈팅: 카카오맵이 중복 렌더링되는 문제 해결하기](https://jelee-river.github.io/posts/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85_%EC%B9%B4%EC%B9%B4%EC%98%A4%EB%A7%B5-%EC%A4%91%EB%B3%B5%EB%A0%8C%EB%8D%94%EB%A7%81/)
 
 [트러블 슈팅: 디바운싱(debouncing)으로 지도의 마커가 사라지지 않는 버그 해결하기](https://jelee-river.github.io/posts/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85_%EB%A7%88%EC%BB%A4-%EC%A0%9C%EA%B1%B0-%EB%B2%84%EA%B7%B8/)
 
