@@ -4,7 +4,7 @@
 
 <br>
 
-[**혼자옵서예 방문하기**:sailboat:](https://honja-op-seo-yeah.vercel.app/)
+<a href="https://honja-op-seo-yeah.vercel.app/" target="_blank"> **혼자옵서예 방문하기**:sailboat: </a>
 
 <br>
 <br>
